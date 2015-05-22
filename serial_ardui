@@ -1,0 +1,8 @@
+import serial
+
+port = "/dev/ttyACM0"
+serialFromArduino = serial.Serial(port,9600)
+serialFromArduino.flushInput()
+
+def read_pot():
+	return int(serialFromArduino.readline())
